@@ -12,24 +12,25 @@ public class YouTubeAutomation {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.youtube.com");
+        System.out.println("Test Case 1: Page opened successfully");
 
         driver.manage().window().maximize();
-
         Thread.sleep(3000);
 
-        // Locate search box
         driver.findElement(By.name("search_query")).sendKeys("selenium tutorial");
+        System.out.println("Test Case 2: Search keyword entered successfully");
 
-        // Press ENTER instead of clicking search button
         driver.findElement(By.name("search_query")).sendKeys(Keys.ENTER);
+        System.out.println("Test Case 3: Search executed successfully");
 
         Thread.sleep(5000);
 
-        // Click first video
         driver.findElement(By.xpath("(//a[@id='video-title'])[1]")).click();
+        System.out.println("Test Case 4: First video opened successfully");
 
-        Thread.sleep(10000);
+        Thread.sleep(8000);
 
         driver.quit();
+        System.out.println("Test Case 5: Browser closed successfully");
     }
 }
